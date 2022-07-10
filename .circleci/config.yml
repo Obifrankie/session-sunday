@@ -15,8 +15,8 @@ jobs:
       - checkout
       - run: npm run build
 
-  workflows:
-    sunday_session:
-      jobs:
-        - install_dependecies
-        - build_dependecies
+workflows:
+  sunday_session:
+    jobs:
+      - install_dependecies
+      - build_dependecies
