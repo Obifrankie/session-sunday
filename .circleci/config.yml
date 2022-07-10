@@ -1,0 +1,22 @@
+version: 2.1
+
+jobs:
+  install_dependecies:
+    docker:
+      image: circleci/node:10.16.3
+    steps:
+      - checkout
+      - run: npm i
+
+  build_dependecies:
+    docker:
+      image: circleci/node:10.16.3
+    steps:
+      - checkout
+      - run: npm run build
+
+  workflows:
+    sunday_session:
+      jobs:
+        - install_dependecies
+        - build_dependecies
